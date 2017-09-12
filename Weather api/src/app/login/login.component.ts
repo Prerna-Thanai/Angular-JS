@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginService } from './login.service';
 import { Router } from '@angular/router';
 @Component({
@@ -16,18 +16,21 @@ export class LoginComponent {
 	enter(data:any){
 
 		console.log(data);
-		if(data.Message==="Success")
+		if(data===1)
 		{
 			console.log("successfully login");
 			this.router.navigateByUrl('/Header');
+	
+	
 		}else{
-			console.log("Not Login")
+				console.log("Not Login");				
+		
 		}
 	}
 
 	login()
 	{
 		this.loginUser.login(this.data)
-		.subscribe((data)=>{this.enter(data) });
+		.subscribe((data)=>{this.enter(this.loginUser.flag) });
 	}
 }
