@@ -1,0 +1,10 @@
+<div class="container">
+	<p>Date :{{weather.date}}</p>
+	<p>City :{{weather.city}}</p>
+	<p><img src={{weather.icon}}></p>
+	<p>Temperature :{{weather.avgtemp_c}}</p>
+	<p>Precipitation :{{weather.totalprecip_mm}}</p>
+	<p>Humidity :{{weather.avghumidity}}</p>
+	<p>Feels Like :<input [(ngModel)]="feels_like" placeholder="{{weather.feels_like}}"></p>
+	<button class="btn btn-primary" (click)=updateFav(weather)>Update</button>
+</div>

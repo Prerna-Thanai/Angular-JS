@@ -1,0 +1,41 @@
+<html>
+<body>
+<div class="container">
+<div class="result col-sm-12" *ngIf="city">
+      <table class="table col-sm-12">
+    <thead>
+    <tr>
+    <td><img src={{city.current.condition.icon}}></td>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>City Name</th>
+        <th>{{city.location.name}}</th>
+      </tr>
+      <tr>
+        <th>Country</th>
+        <th>{{city.location.country}}</th>
+      </tr>
+      <tr>
+        <td>Temperature</td>
+        <td>{{city.current.temp_c}}</td>
+      </tr>
+      <tr>
+      <td>Feels Like</td>
+      <td>{{city.current.feelslike_c}}</td>
+      </tr>
+      <tr>
+        <td>Climate</td>
+        <td>{{city.current.condition.text}}</td>
+      </tr>
+      <tr>
+      <td>Humidity</td>
+      <td>{{city.current.humidity}}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  </div>
+</body>
+</html>

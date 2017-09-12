@@ -1,0 +1,31 @@
+	<html>
+	<body>
+		<app-header></app-header>
+		<div class="container">
+			<app-update-fav *ngIf="update" [weather]="update"></app-update-fav>
+			<hr>
+			<div class="forecast col-md-12" *ngIf="favourites">
+				<h1>Your Added Favourites</h1>
+				<div class=details>
+					<div class="row resonsive-sm wrap">
+						<div class="col-md-4" *ngFor="let weather of favourites | paginate: { itemsPerPage: 3, currentPage: p }" >
+							<p>Date :{{weather.date}}</p>
+							<p>City :{{weather.city}}</p>
+							<p><img src={{weather.icon}}></p>
+							<p>Temperature :{{weather.avgtemp_c}}</p>
+							<p>Precipitation :{{weather.totalprecip_mm}}</p>
+							<p>Humidity :{{weather.avghumidity}}</p>
+							<p>Feels Like: {{weather.feels_like}}</p>
+							<div class="updation">
+								<button type="button" class="btn" (click)=updateFav(weather)>Update</button>
+								<button type="button" class="btn" (click)=deleteFav(weather.date,weather.city)>Delete</button>
+							</div>
+							<hr>
+						</div>
+					</div>
+				</div>
+			</div>
+			<pagination-controls (pageChange)="p = $event"></pagination-controls>
+		</div>
+	</body>
+	</html>

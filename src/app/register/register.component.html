@@ -1,0 +1,50 @@
+<body class="bg-dark">
+<br><br>
+    <div class="container">
+    
+                <div class="col-md-6 mx-auto">
+                    <span class="anchor" id="formLogin"></span>
+
+                    <!-- form card login -->
+                    <div class="card card-outline-primary">
+                        <div class="card-header card-inverse card-primary mb-3">
+                            <h3 class="mb-0">Register</h3>
+                        </div>
+                        <div class="card-body container">
+                            <form class="form" role="form" autocomplete="off" id="formLogin">
+                                <div class="form-group text-primary">
+                                    <label for="uname">Username</label>
+                                    <input type="text" class="form-control " [(ngModel)]="data.Username" placeholder="Enter User Name" name="uname" id="uname" required="">
+                                </div>
+                                <div class="form-group text-primary">
+                                    <label for="pwd">Password</label>
+                                    <input type="password" class="form-control "  [(ngModel)]="data.Password" placeholder="Enter Password" name="uid" id="pwd" required="" autocomplete="new-password">
+                                </div>
+                                <div class="form-group text-primary">
+                                    <label for="email">Email</label>
+                                    <input type="email"  [(ngModel)]="data.Email" placeholder="Enter Email" class="form-control " name="uEmail" id="email" required="" autocomplete="new-password">
+                                </div>
+                               <div class="form-group text-primary">
+                                    <label for="phno">Phone No.</label>
+                                    <input type="text" [(ngModel)]="data.Phone" placeholder="Enter Phone Number" pattern="[789][0-9]{9}" class="form-control  " name="uphone" id="phno" required="">
+                                </div>
+                                <div class="form-group text-primary">
+                                    <label for="dob">Date of Birth</label>
+                                    <input type="date" [(ngModel)]="data.DOB" placeholder="Enter DOB" class="form-control " name="udob" id="dob" required="">
+                                </div>
+                                <div class="form-group text-primary">
+                                    <input type="submit" class="btn btn-primary btn-lg" (click)=register(data) value="Register" >
+                                </div>
+                                
+                            </form>
+                        </div>
+                        <!--/card-block-->
+                    </div>
+                    <!-- /form card login -->
+                </div>
+
+
+                
+    <!--/row-->
+</div>
+</body>

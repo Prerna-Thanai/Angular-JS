@@ -1,0 +1,23 @@
+<html>
+<body>
+	<div class="container">
+		<hr *ngIf="city">
+		<div class="forecast col-md-12" *ngIf="city">
+			<h1>Forecast for upcoming 5 days</h1>
+			<div class="row resonsive-sm wrap">
+				<div class="col-md-4" *ngFor="let weather of city.forecast.forecastday | paginate: { itemsPerPage: 3, currentPage: p}"  >
+					<h5><img src={{weather.day.condition.icon}}></h5>
+					<h5>Date :{{weather.date}}</h5>
+					<h5>Temprature :{{weather.day.avgtemp_c}}</h5>
+					<h5>Precipitation :{{weather.day.totalprecip_mm}}</h5>
+					<h5>Humidity :{{weather.day.avghumidity}}</h5>
+					<h5>Feels Like :{{weather.day.condition.text}}</h5>
+					<button type="button" class="btn" (click)=saveFav(weather,city.location.name)>Add to favourites</button>
+					<hr>
+				</div>
+			</div>
+		</div>
+		<pagination-controls (pageChange)="p = $event"></pagination-controls>
+	</div>
+</body>
+</html>

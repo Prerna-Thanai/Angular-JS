@@ -1,0 +1,26 @@
+.search{
+	background: #22938e;
+	margin-top: 15px;
+	text-align: center;
+	}
+
+.search .input{
+	padding-top: 15px;
+}
+.search .button{
+	margin-top: 10px;
+	padding-bottom: 10px;
+}
+
+.forecast{
+	text-decoration: none;
+}
+.button{
+	position: relative;
+}
+input
+{
+	 font-family: comic-sans;
+
+	 border-radius: 10px;
+	}
